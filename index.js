@@ -14,11 +14,11 @@ app.use(async (ctx, next) => {
     if (ctx.method !== 'POST')
         return await next();
     const body = ctx.request.body;
-    if (!(body instanceof Array))
-        ctx.throw(400, 'body must be an Array of data');
+    if (!(body instanceof Array || body instanceof Object))
+        ctx.throw(400, 'body must be an Array or Object of data');
     data.push({
         created_at: new Date(),
-        devices:    body
+        devices:    body.cellphones || body
     });
     ctx.status = 201;
 });
