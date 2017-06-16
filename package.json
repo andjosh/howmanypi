@@ -1,0 +1,17 @@
+{
+  "name": "howmanypi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-body": "^2.1.0",
+    "koa-cors": "0.0.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "andjosh",
+  "license": "MIT"
+}
