@@ -6,7 +6,7 @@ const app     = module.exports = new Koa();
 let data      = [];
 
 app.use(koaBody({
-    jsonLimit: '1kb'
+    jsonLimit: '1mb'
 }));
 app.use(koaCORS());
 
