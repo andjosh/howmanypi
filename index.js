@@ -21,7 +21,6 @@ app.use(async (ctx, next) => {
         devices:    body
     });
     ctx.status = 201;
-    console.log(new Date(), body);
 });
 // response
 app.use(async (ctx, next) => {
@@ -31,7 +30,7 @@ app.use(async (ctx, next) => {
 });
 
 if (!module.parent) {
-    console.log(pkg.name, 'listening on', process.env.PORT || 3000,
-        'in', process.env.NODE_ENV, 'mode');
+    console.log('%s listening on %s in %s mode',
+        pkg.name, process.env.PORT || 3000, process.env.NODE_ENV);
     app.listen(process.env.PORT || 3000);
 }
