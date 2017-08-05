@@ -53,10 +53,10 @@ app.use(async (ctx, next) => {
     const now   = new Date();
     const start = new Date(ctx.query.start || (now.getTime() - DAY_MS));
     const end   = new Date(ctx.query.end || now);
-    const results = pg.select().from('sensor_data')
+    const query = pg.select().from('sensor_data')
         .where('created_at', '<', end)
-        .where('created_at', '>', start)
-        .paginate(ctx.state.limit, ctx.state.offset);
+        .where('created_at', '>', start);
+    const results = query.paginate(ctx.state.limit, ctx.state.offset);
     ctx.body = {
         meta: meta(ctx, results),
         data: results.data
