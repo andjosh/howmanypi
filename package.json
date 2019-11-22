@@ -6,7 +6,7 @@
   "dependencies": {
     "knex": "^0.11.10",
     "koa": "^2.2.0",
-    "koa-body": "^2.1.0",
+    "koa-body": "^4.1.1",
     "koa-cors": "0.0.16",
     "pg": "^6.1.2"
   },
